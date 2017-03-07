@@ -1,6 +1,7 @@
 package Ali;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -60,7 +61,6 @@ public class SplitTest {
     public static void main(String[] args) {
         int[] A = new int[]{10, 2, 11, 13, 1, 1, 1, 1, 1};
         System.out.println(judge(A));
-        String a = "temp";
-        a.intern();
+        ArrayList<String> strings=new ArrayList<>();
     }
 }
