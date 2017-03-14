@@ -1,6 +1,9 @@
 package kafka;
 
+import designpattern.singleton.DoubleCheckLockingSingleton;
+import designpattern.singleton.EnumSingleton;
 import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.Partitioner;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
@@ -18,14 +21,11 @@ public class KafkaProduceDemo {
     static int totalCount=10;
 
 
-    public static final String getValue(){
+    public static String getValue() {
         return null;
     }
 
     public static void main(String[] args) {
-
-
-
 
         //LinkedHashMap map=new LinkedHashMap()
         ArrayList list=new ArrayList();
@@ -43,9 +43,11 @@ public class KafkaProduceDemo {
 
         Producer<String, String> producer = new KafkaProducer<>(props);
         //ProducerRecord<String,String> record=new ProducerRecord<String, String>()
+        //Partitioner
         System.out.println("start produce");
-        for (int i = 0; i < 1000000; i++)
-            producer.send(new ProducerRecord<>("dual-partition", "data-" + Integer.toString(i)));
+        //for (int i = 0; i < 1000000; i++)
+        producer.send(new ProducerRecord<>("dual-partition", "data-" + Integer.toString(10)));
+        //producer.send(new ProducerRecord<String, String>())
 
         System.out.println("end");
         producer.flush();

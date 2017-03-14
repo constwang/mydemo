@@ -1,7 +1,4 @@
-package google;
-
-import kafka.KafkaConsumerDemo;
-import kafka.KafkaProduceDemo;
+package codetest.google;
 
 import java.io.*;
 import java.util.HashSet;
