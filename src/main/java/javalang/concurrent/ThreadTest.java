@@ -13,17 +13,15 @@ public class ThreadTest {
     }
     public boolean getResult(){
         ExecutorService executor= Executors.newFixedThreadPool(10);
-        executor.execute(new Runnable() {
-            public void run() {
-                System.out.println("start");
-                while (true){
-                    try {
-                        Thread.sleep(500);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    System.out.println("test");
+        executor.execute(() -> {
+            System.out.println("start");
+            while (true) {
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
+                System.out.println("test");
             }
         });
         return true;

@@ -57,7 +57,7 @@ public class KafkaConsumerDemo {
                 buffer.add(record);
             }
             if (buffer.size() >= minBatchSize) {
-                //insertIntoDb(buffer);处理buffer里的数据
+                //insertIntoDb(buffer);澶勭悊buffer閲岀殑鏁版嵁
                 consumer.commitSync();
                 buffer.clear();
             }

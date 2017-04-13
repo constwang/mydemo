@@ -28,6 +28,6 @@ public class Permutations {
     }
 
     public static void main(String[] args){
-        System.out.println(permute(new int[]{1,2,3}).toString());;
+        System.out.println(permute(new int[]{1, 2, 3}).toString());
     }
 }
