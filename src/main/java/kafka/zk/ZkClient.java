@@ -17,7 +17,8 @@ public class ZkClient {
 
     public static void main(String[] args) throws IOException, KeeperException, InterruptedException {
         ZooKeeper zk = new ZooKeeper("localhost:2181", 3000, new TestWatcher());
-        zk.create("/test", "testdata".getBytes(), null, CreateMode.EPHEMERAL);
+        String str = zk.create("fa/test", "testdata".getBytes(), null, CreateMode.EPHEMERAL);
+        System.out.println(str);
         //zk.getData();
     }
 }
