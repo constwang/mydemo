@@ -36,6 +36,14 @@ public class ReverseList {
         return head;
     }
 
+    public static Node reverseListByRecurse(Node head) {
+        if (head == null || head.next == null) return head;
+        Node newHead = reverseListByRecurse(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newHead;
+    }
+
     public static void main(String[] args) {
         Node node1 = new Node(1);
         Node node2 = new Node(2);
@@ -43,7 +51,7 @@ public class ReverseList {
         node2.next = node3;
         node1.next = node2;
         //System.out.println(node1);
-        Node result = reverseList(node1);
+        Node result = reverseListByRecurse(node1);
         System.out.println(result);
     }
 }

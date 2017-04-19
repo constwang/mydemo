@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * Created by wa on 2017/4/12.
  */
-public class MiddleorderTraversal {
+public class InOrderTraversal {
     // 递归中序遍历
     public static void recursionMiddleorderTraversal(TreeNode root) {
         if (root != null) {
