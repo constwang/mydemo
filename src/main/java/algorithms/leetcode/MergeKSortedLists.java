@@ -1,25 +1,12 @@
 package algorithms.leetcode;
 
+import algorithms.linked.ListNode;
+
 /**
  * Created by wa on 2017/3/30.
  */
 public class MergeKSortedLists {
-    public static class ListNode {
-        int val;
-        ListNode next;
 
-        ListNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return "ListNode{" +
-                    "val=" + val +
-                    ", next=" + next +
-                    '}';
-        }
-    }
 
     public static ListNode mergeKLists(ListNode[] lists) {
         return partition(lists, 0, lists.length - 1);

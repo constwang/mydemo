@@ -10,7 +10,7 @@ public class CircleList {
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
-            if (fast.val == slow.val) return true;
+            if (fast == slow) return true;
         }
         return false;
     }
