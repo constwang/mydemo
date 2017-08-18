@@ -1,5 +1,11 @@
 package algorithms;
 
+import algorithms.sort.TopNPriorityQueue;
+import org.apache.commons.lang.math.RandomUtils;
+import org.apache.commons.lang.time.StopWatch;
+
+import java.util.Arrays;
+
 /**
  * Created by wa on 2017/4/6.
  */
@@ -104,4 +110,36 @@ public class FindTopNValues {
         swap(a, r, j + 1);
         return j + 1;
     }
+
+    public static void main(String[] args) {
+        final int  TOTAL=10000000;
+        final int  n=100;
+        int[] nums=new int[TOTAL];
+        for (int i = 0; i < TOTAL; i++) {
+            nums[i]= RandomUtils.nextInt(TOTAL*10);
+        }
+
+        StopWatch watch=new StopWatch();
+        watch.start();
+        int[] res=findTopNValues(nums,n);
+        watch.stop();
+        System.out.println(watch.getTime());
+        Arrays.sort(res);
+        System.out.println(Arrays.toString(res));
+
+        watch.reset();
+        watch.start();
+        int[] res1= TopNPriorityQueue.findTopNValues(nums,n);
+        watch.stop();
+        System.out.println(watch.getTime());
+        Arrays.sort(res1);
+        System.out.println(Arrays.toString(res1));
+
+        watch.reset();
+        watch.start();
+        Arrays.sort(nums);
+        watch.stop();
+        System.out.println(watch.getTime());
+    }
+
 }
